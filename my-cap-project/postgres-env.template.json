@@ -1,0 +1,18 @@
+{
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "postgres",
+        "credentials": {
+          "hostname": "<from BTP / cf service-key>",
+          "port": 2663,
+          "dbname": "<database name>",
+          "username": "<user>",
+          "password": "<password>",
+          "ssl": true
+        }
+      }
+    }
+  },
+  "_optional_btp_api_server": "https://api-backing-services.us10-001.data.services.cloud.sap"
+}
