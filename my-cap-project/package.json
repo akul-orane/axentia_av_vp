@@ -5,6 +5,8 @@
     "@cap-js/postgres": "^2.2.0",
     "@sap/cds": "^9",
     "@sap/cds-foss": "^5.0.1",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.20.0"
   },
   "devDependencies": {
@@ -12,9 +14,15 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch": "cds watch"
+    "watch": "cds watch",
+    "seed:user": "node scripts/seed-auth-user.js"
   },
   "cds": {
+    "features": {
+      "fiori": {
+        "lean_draft": true
+      }
+    },
     "requires": {
       "db": {
         "kind": "postgres"

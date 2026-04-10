@@ -1,5 +1,5 @@
-using my.app from '../db/schema';
+using my.app as app from '../db/schema';
 
 service CatalogService {
-  entity Products as projection on my.app.Products;
+  entity Products as projection on app.Products;
 }
