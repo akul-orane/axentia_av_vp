@@ -9,7 +9,8 @@
           "dbname": "<database name>",
           "username": "<user>",
           "password": "<password>",
-          "ssl": true
+          "ssl": true,
+          "connectionTimeoutMillis": 15000
         }
       }
     }
