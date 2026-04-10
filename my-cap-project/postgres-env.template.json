@@ -9,8 +9,14 @@
           "dbname": "<database name>",
           "username": "<user>",
           "password": "<password>",
-          "ssl": true,
-          "connectionTimeoutMillis": 15000
+          "ssl": true
+        },
+        "client": {
+          "connectionTimeoutMillis": 10000
+        },
+        "pool": {
+          "acquireTimeoutMillis": 12000,
+          "min": 0
         }
       }
     }

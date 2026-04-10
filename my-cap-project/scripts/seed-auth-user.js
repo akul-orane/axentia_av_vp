@@ -49,7 +49,7 @@ Database connection timed out. Typical causes:
 What to try:
   • Run the seed on BTP (e.g. cf run-task / job) where the app has binding access, or add your public IP to the DB allowlist if your operator supports it.
   • From your machine, test: nc -vz <hostname> <port>  (or telnet) — it must connect.
-  • Set credentials.connectionTimeoutMillis in default-env.json to fail faster with a clearer error from the driver.
+  • In default-env.json use cds.requires.db.client.connectionTimeoutMillis (not inside credentials) — @cap-js/postgres only passes that via the "client" block.
 `)
     }
     process.exit(1)
