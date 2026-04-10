@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 module.exports = cds.service.impl(async function () {
-  const { AuthUser } = cds.entities('my.app')
+  const { AuthUser } = cds.db.entities
 
   this.on('login', async req => {
     const { username, password } = req.data || {}

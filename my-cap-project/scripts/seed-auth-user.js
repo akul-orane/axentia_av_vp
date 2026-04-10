@@ -8,8 +8,9 @@ const bcrypt = require('bcryptjs')
 const { SELECT, INSERT, UPDATE } = cds.ql
 
 async function run() {
+  cds.model = await cds.load('*')
   await cds.connect.to('db')
-  const { AuthUser } = cds.entities('my.app')
+  const { AuthUser } = cds.db.entities
   const username = process.env.SEED_USER || 'admin'
   const plain = process.env.SEED_PASSWORD || 'changeme'
   const passwordHash = bcrypt.hashSync(plain, 10)
